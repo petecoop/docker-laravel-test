@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     mercurial \
  && rm -r /var/lib/apt/lists/* \
  && cp -s /usr/lib/x86_64-linux-gnu/libsybdb.so /usr/lib/ \
+ && pecl install xdebug \
  && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
  && docker-php-ext-install \
     mbstring \
@@ -17,6 +18,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     pdo_dblib \
     pdo_mysql \
     zip \
+ && docker-php-ext-enable xdebug \
  && cd /usr/src/php \
  && make clean
 
