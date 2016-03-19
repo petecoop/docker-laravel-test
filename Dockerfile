@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     mcrypt \
     pdo_dblib \
     pdo_mysql \
+    pdo_psql \
     zip \
  && docker-php-ext-enable xdebug \
  && cd /usr/src/php \
