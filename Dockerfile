@@ -19,9 +19,7 @@ RUN apt-get update && apt-get install -y --force-yes \
     pdo_mysql \
     pdo_psql \
     zip \
- && docker-php-ext-enable xdebug \
- && cd /usr/src/php \
- && make clean
+ && docker-php-ext-enable xdebug
 
 # composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
